@@ -10,7 +10,7 @@ import java.util.Random;
 public class OneOfEachStats {
 	public static void main (String[] args) {
 		// Gets the two command-line arguments
-		int T = Integer.parseInt(args[0]);
+		int num = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
@@ -24,6 +24,82 @@ public class OneOfEachStats {
 		//// just like you had in the previous version, except that the 
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
+		String gender;
+		String wantedGender;
+		int count2 = 0;
+		int count3 = 0;
+		int count4Plus = 0;
+		int sumOfIterations = 0;
+		for(int i =0; i < num; i++)
+		{
+			int kids = 1;
+			int random = (int)(generator.nextDouble() * 10);
+			if(random >= 5)
+			{
+				gender = "g";
+				wantedGender = "b";
+			}
+			else 
+			{
+				gender = "b";
+				wantedGender = "g";
+
+			}
+
+			//System.out.print(gender + " ");
+
+			while(!gender.equals(wantedGender))
+			{
+				random = (int)(generator.nextDouble() * 10);
+				kids++;
+				if(random >= 5)
+				{
+					gender = "g";
+				}
+				else 
+				{
+					gender = "b";
+				}
+
+				//System.out.print(gender + " ");
+			}
+			if(kids == 2)
+				count2++;
+
+			else if(kids == 3)
+				count3++;
+
+			else count4Plus++;
+
+			sumOfIterations += kids;
+			//System.out.println();
+			//System.out.println(sumOfIterations);
+		}
+
+		
+		double avarage = ((double)sumOfIterations)/num;
+
+		System.out.println("Avarage: " + avarage + " children to get at least one of each gender." );
+		System.out.println("Number of families with 2 children: " + count2);
+		System.out.println("Number of families with 3 children: " + count3);
+		System.out.println("Number of families with 4 or more children: " + count4Plus);
+
+		String maxKids;
+		if(Math.max(count2, Math.max(count3, count4Plus))== count2)
+		{
+			maxKids = "2.";
+		}
+		else if(Math.max(count2, Math.max(count3, count4Plus))== count3)
+		{
+			maxKids = "3.";
+		}
+		else
+		{
+			maxKids = "4 or more.";
+		}
+
+		System.out.println("The most common number of children is " + maxKids);
+
 		    
 	}
 }
