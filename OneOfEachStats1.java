@@ -63,7 +63,7 @@ public class OneOfEachStats1 {
 		
 		double avarage = ((double)sumOfIterations)/num;
 
-		System.out.println("Avarage: " + avarage + " children to get at least one of each gender." );
+		System.out.println("Average: " + avarage + " children to get at least one of each gender." );
 		System.out.println("Number of families with 2 children: " + count2);
 		System.out.println("Number of families with 3 children: " + count3);
 		System.out.println("Number of families with 4 or more children: " + count4Plus);
