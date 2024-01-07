@@ -6,6 +6,7 @@
 public class OneOfEach {
 	public static void main (String[] args) {
 
+		// #feedback: this code could be much simpplier - but you wrote it perfectly such anyone can understand it - beautiful!
 		String gender;
 		String wantedGender;
 		int kids = 1;
