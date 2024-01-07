@@ -5,31 +5,23 @@ public class DamkaBoard {
 	public static void main(String[] args) {
 		
 		int num = Integer.parseInt(args[0]);
-		int i = 0;
-		
-		while(i < num)
+
+		// #feedback: better to use here for loops...
+		for (int i = 0; i < num; i++)
 		{
-			int j = 0;
-			while(j < num*2)
+			for (int j = 0; j < num/2; j++)
 			{
 				if(i % 2 == 0)
 				{
-					if(j % 2 == 0)
-						System.out.print("*");
-
-					else System.out.print(" ");
+					// #feedback why not to print both ' ' and '*' together?
+					// #feedback use always {} to scope even when there is only one line.
+					System.out.print("* ");
 				}
 				else {
-					if(j % 2 == 0)
-						System.out.print(" ");
-
-					else System.out.print("*");
+					System.out.print(" *");
 				}
-				j++;
 			}
 			System.out.println();
-			i++;
-
 		}
 	}
 }
