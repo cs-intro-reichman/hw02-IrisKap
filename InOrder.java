@@ -7,8 +7,8 @@ public class InOrder {
 
 		// #feedback: use do-while loop to avoid duplications of code
 		int random;
+		int randomNext = (int)(Math.random() * 10);
 		do {
-			int randomNext = (int)(Math.random() * 10);
 			System.out.print(randomNext + " ");
 			random = randomNext; 
 			randomNext = (int)(Math.random() * 10);
